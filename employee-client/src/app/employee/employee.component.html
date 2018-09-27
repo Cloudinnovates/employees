@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>
+    Welcome to Test!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+  <h2>Please enter the Employee Id to search: </h2>
+  <label>
+    <input name="employeeId" id="employeeId" [(ngModel)]="employeeId" (keydown)="preventCharacter($event)">
+  </label>
+  <button (click)="searchEmployee(employeeId)">Search</button>
+  <br />
+  <br />
+  <div>
+    <table [hidden]="!employees">
+      <thead>
+        <tr>
+          <th colspan="3">Id</th>
+          <th colspan="3">Name</th>
+          <th colspan="3">Contract Type Name</th>
+          <th colspan="3">Role Id</th>
+          <th colspan="3">Role Name</th>
+          <th colspan="3">Hourly Salary</th>
+          <th colspan="3">Monthly Salary</th>
+          <th colspan="3">Annual Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of employees">
+          <td colspan="3">{{item.id}}</td>
+          <td colspan="3">{{item.name}}</td>
+          <td colspan="3">{{item.contractTypeName}}</td>
+          <td colspan="3">{{item.roleId}}</td>
+          <td colspan="3">{{item.roleName}}</td>
+          <td colspan="3">{{item.hourlySalary}}</td>
+          <td colspan="3">{{item.monthlySalary}}</td>
+          <td colspan="3">{{item.annualSalary}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+  <br />
+  <button [hidden]="!employees" (click)="clearSearch()">Clear Search</button>
+</div>

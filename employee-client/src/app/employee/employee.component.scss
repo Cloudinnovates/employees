@@ -1,0 +1,63 @@
+.container {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+div {
+  display: inline;
+  padding: 1em 1.5em;
+}
+
+label {
+  top: 10px;
+}
+
+table {
+  align-content: center;
+  width: 90%;
+
+  thead {
+    font-size: 23px;
+    font-weight: bold;
+
+    tr {
+      th {
+        padding: 5px 10px;
+      }
+
+      th:first-child {
+        width: 25px;
+      }
+
+      th:nth-child(2) {
+        width: 120px;
+      }
+
+      th:nth-child(3) {
+        width: 60px;
+      }
+
+      th:nth-child(4) {
+        width: 40px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        padding: 8px 10px 5px;
+
+        &:first-child,
+        &:last-child {
+          padding: 5px;
+        }
+
+        &:first-child {
+          text-overflow: clip;
+        }
+
+      }
+    }
+  }
+}
